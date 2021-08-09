@@ -1,3 +1,4 @@
+import NewTodo from './components/NewTodo';
 import Todos from './components/Todos';
 import Todo from './models/todo';
 function App() {
@@ -5,8 +6,13 @@ function App() {
     new Todo('Learn'),
     new Todo('Earn')
   ]
+
+  const addTodoHandler = (todoText: string) => {
+    console.log(todoText)
+  }
   return (
     <div>
+      <NewTodo onAddTodo={addTodoHandler} />
       <Todos items={todos}/>
     </div>
   );
